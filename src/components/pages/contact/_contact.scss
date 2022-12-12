@@ -1,0 +1,141 @@
+.contact {
+  &__container {
+    display: grid;
+    grid-template-columns: 300px 400px;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__info {
+    display: grid;
+    row-gap: 1rem;
+  }
+
+  .card {
+    background-color: $box-color;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+
+    &__icon {
+      margin-bottom: $mb-0-25;
+    }
+
+    &__title {
+      font-size: $small-font-size;
+      font-weight: $font-medium;
+    }
+
+    &__data {
+      font-size: $small-font-size;
+      display: block;
+      margin-bottom: $mb-0-75;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.25rem;
+      color: $skin-color;
+      font-size: $small-font-size;
+      cursor: pointer;
+      //TODO Add hover animation (1.38.34)
+    }
+  }
+
+  .form {
+    &__container {
+      position: relative;
+      margin-top: 0.1rem;
+      margin-bottom: 1.9rem;
+    }
+
+    &__input,
+    &__textarea {
+      font-family: $body-font;
+      width: 100%;
+      border: 2px solid $text-color;
+      background-color: transparent;
+      padding: 0.6rem 1.2rem;
+      color: $title-color;
+      font-weight: $font-regular;
+      font-size: $normal-font-size;
+      letter-spacing: 0.5px;
+      border-radius: 0.5rem;
+      transition: 0.3s;
+      outline: none;
+    }
+
+    &__textarea {
+      min-height: 140px;
+      resize: none;
+    }
+
+    &__label,
+    &__textarea-label {
+      // Text inside input
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      padding: 0 0.4rem;
+      color: $text-color;
+      font-size: 1rem;
+      font-weight: $font-medium;
+      z-index: 1000;
+      transition: 0.5s;
+    }
+
+    &__textarea-label {
+      top: 0.8rem;
+      transform: translateY(0);
+    }
+
+    span {
+      // ?Text on the top border
+      position: absolute;
+      top: 0;
+      left: 25px;
+      transform: translateY(-50%);
+      font-size: $smaller-font-size;
+      color: transparent;
+      padding: 0.4rem;
+      pointer-events: none;
+      z-index: 500;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 5px;
+        background-color: $body-color;
+        opacity: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.3s;
+      }
+      &::before {
+        left: 50%;
+      }
+      &::after {
+        right: 50%;
+      }
+    }
+
+    &__container.focus {
+      label {
+        top: 0;
+        transform: translateY(-50%);
+        left: 25px;
+        font-size: $smaller-font-size;
+      }
+      span::before,
+      span::after {
+        opacity: 1;
+      }
+    }
+  }
+}
