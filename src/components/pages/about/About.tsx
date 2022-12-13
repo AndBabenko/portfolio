@@ -1,7 +1,16 @@
 import React from "react";
 
-import icon from "../../../assets/svgs/tech.svg";
+import {
+  UilAward,
+  UilSuitcase,
+  UilHeadphones,
+  UilCalendarAlt,
+  UilGraduationCap,
+  UilBriefcase,
+} from "@iconscout/react-unicons";
+
 import aboutImg from "../../../assets/imgs/about-img.jpg";
+import Button from "../../ui/button";
 
 const About: React.FC = () => {
   return (
@@ -14,35 +23,32 @@ const About: React.FC = () => {
           <img src={aboutImg} alt="About-Image" className="about__img" />
 
           <div className="about__data">
-            <h3 className="about__header">Lorem ipsum dolor sit amet.</h3>
+            <h3 className="about__header">Hi, I`m Andrey</h3>
             <p className="about__description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus,
-              rem assumenda! Voluptates earum vel dolorum.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem,
+              obcaecati.
             </p>
 
             <div className="about__info">
-              <div className="about__info__box">
-                <img src={icon} className="icon" />
-                <h3 className="about__info__title">Experience</h3>
-                <span className="about__info__subtitle">1+ year</span>
+              <div className="about__info-box">
+                <UilAward />
+                <h3 className="about__info-title">Experience</h3>
+                <span className="about__info-subtitle">1+ year</span>
               </div>
 
-              <div className="about__info__box">
-                <img src={icon} className="icon" />
-                <h3 className="about__info__title">Completed</h3>
-                <span className="about__info__subtitle">3 projects</span>
+              <div className="about__info-box">
+                <UilSuitcase />
+                <h3 className="about__info-title">Completed</h3>
+                <span className="about__info-subtitle">3 projects</span>
               </div>
 
-              <div className="about__info__box">
-                <img src={icon} className="icon" />
-                <h3 className="about__info__title">Support</h3>
-                <span className="about__info__subtitle">Online 24/7</span>
+              <div className="about__info-box">
+                <UilHeadphones />
+                <h3 className="about__info-title">Support</h3>
+                <span className="about__info-subtitle">Online 24/7</span>
               </div>
             </div>
-            <a href="#contact" className="button">
-              <img src={icon} className="icon" />
-              Contact Me
-            </a>
+            <Button text="Contact Me" target="contact" />
           </div>
         </div>
       </section>
@@ -55,7 +61,7 @@ const About: React.FC = () => {
         <div className="qualification__container container">
           <div className="education">
             <h3 className="qualification__title">
-              <img src={icon} className="icon" />
+              <UilGraduationCap className="qualification__icon" />
               Education
             </h3>
 
@@ -64,7 +70,7 @@ const About: React.FC = () => {
                 <h3 className="timeline__title">Education</h3>
                 <p className="timeline__text">Master of something</p>
                 <span className="timeline__date">
-                  <img src={icon} className="icon" />
+                  <UilCalendarAlt className="timeline__icon" />
                   <span>2010-2015</span>
                 </span>
               </div>
@@ -72,14 +78,16 @@ const About: React.FC = () => {
                 <h3 className="timeline__title">Some School</h3>
                 <p className="timeline__text">Expert of something</p>
                 <span className="timeline__date">
-                  <img src={icon} className="icon" /> 2015-2020
+                  <UilCalendarAlt className="timeline__icon" />
+                  2015-2020
                 </span>
               </div>
               <div className="timeline__item">
                 <h3 className="timeline__title">Some School</h3>
                 <p className="timeline__text">Expert of something</p>
                 <span className="timeline__date">
-                  <img src={icon} className="icon" /> 2020-present
+                  <UilCalendarAlt className="timeline__icon" />
+                  2020-present
                 </span>
               </div>
             </div>
@@ -87,7 +95,9 @@ const About: React.FC = () => {
 
           <div className="experience">
             <h3 className="qualification__title">
-              <img src={icon} className="icon" />
+              <span>
+                <UilBriefcase className="qualification__icon" />
+              </span>
               Experience
             </h3>
 
@@ -96,21 +106,24 @@ const About: React.FC = () => {
                 <h3 className="timeline__title">Some Company</h3>
                 <p className="timeline__text">Manager</p>
                 <span className="timeline__date">
-                  <img src={icon} className="icon" /> 2010-2015
+                  <UilCalendarAlt className="timeline__icon" />
+                  2010-2015
                 </span>
               </div>
               <div className="timeline__item">
                 <h3 className="timeline__title">Some Company</h3>
                 <p className="timeline__text">Manager</p>
                 <span className="timeline__date">
-                  <img src={icon} className="icon" /> 2015-2020
+                  <UilCalendarAlt className="timeline__icon" />
+                  2015-2020
                 </span>
               </div>
               <div className="timeline__item">
                 <h3 className="timeline__title">Some Company</h3>
                 <p className="timeline__text">Manager</p>
                 <span className="timeline__date">
-                  <img src={icon} className="icon" /> 2020-present
+                  <UilCalendarAlt className="timeline__icon" />
+                  2020-present
                 </span>
               </div>
             </div>

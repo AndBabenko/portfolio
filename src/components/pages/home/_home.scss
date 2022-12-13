@@ -2,17 +2,22 @@
   background: url("../../../assets/imgs/home-bg.jpg");
   background-size: cover;
   background-position: center center;
-  min-height: 100vh;
+  height: 100vh;
+  position: relative;
 
   &__img {
     display: none;
+  }
+
+  &__popup {
+    position: absolute;
   }
 
   .container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
     padding-top: 1.8rem;
     padding-bottom: 1.8rem;
   }
@@ -22,7 +27,7 @@
     align-items: center;
     column-gap: 3.5rem;
 
-    &__follow {
+    &-follow {
       font-weight: $font-medium;
       position: relative;
 
@@ -37,12 +42,12 @@
       }
     }
 
-    &__links {
+    &-links {
       display: inline-flex;
       column-gap: 1rem;
     }
 
-    &__item {
+    &-item {
       color: $text-color;
       transition: 0.4s;
 
@@ -58,36 +63,50 @@
 
   &__title {
     font-size: $biggest-font-size;
+    max-width: 550px;
   }
 
   &__subtitle {
     font-size: $h3-font-size;
     font-weight: $font-medium;
     margin-bottom: $mb-0-75;
+    max-width: 550px;
   }
 
   &__description {
-    max-width: 550px;
     margin-bottom: $mb-2;
+    max-width: 550px;
   }
 
   &__info {
     display: flex;
     column-gap: 1.8rem;
 
-    &__item {
+    &-item {
       display: flex;
       align-items: center;
-      column-gap: $mb-0-25;
+      column-gap: $mb-1;
     }
 
-    &__title {
+    &-title {
       font-size: $small-font-size;
       font-weight: $font-medium;
     }
 
-    &__subtitle {
+    &-subtitle {
+      cursor: pointer;
       font-size: $small-font-size;
+      transition: 0.5s;
+
+      &:hover {
+        color: $skin-color;
+      }
+    }
+
+    &-image {
+      width: 28px;
+      height: 28px;
+      color: $skin-color;
     }
   }
 }

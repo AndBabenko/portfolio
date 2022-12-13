@@ -20,7 +20,6 @@ const Testimonials = () => {
 
         <Swiper
           modules={[Pagination]}
-          pagination={{ clickable: true }}
           className="testimonials__container container"
           spaceBetween={30}
           loop={true}

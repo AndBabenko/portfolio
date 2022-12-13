@@ -1,40 +1,50 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
-import icon from "../../../assets/svgs/tech.svg";
+import { UilShareAlt } from "@iconscout/react-unicons";
 
 const Sidebar: React.FC = () => {
   return (
     <aside className="sidebar" id="sidebar">
       <nav className="nav">
         <div className="nav__logo">
-          <a href="index.html" className="nav__text">
-            A
-          </a>
+          <span className="nav__logo-text">A</span>
         </div>
         <div className="nav__menu">
           <ul className="nav__list">
-            <li className="nav__item nav__item-active">
-              <a href="#home">Home</a>
+            <li className="nav__item">
+              <HashLink smooth to="/#home">
+                Home
+              </HashLink>
             </li>
             <li className="nav__item">
-              <a href="#about">About</a>
+              <HashLink smooth to="#about">
+                About
+              </HashLink>
             </li>
             <li className="nav__item">
-              <a href="#skills">Skills</a>
+              <HashLink smooth to="#skills">
+                Skills
+              </HashLink>
             </li>
             <li className="nav__item">
-              <a href="#portfolio">Portfolio</a>
+              <HashLink smooth to="#portfolio">
+                Portfolio
+              </HashLink>
             </li>
             <li className="nav__item">
-              <a href="#services">Services</a>
+              <HashLink smooth to="#services">
+                Services
+              </HashLink>
             </li>
             <li className="nav__item">
-              <a href="#contact">Contact</a>
+              <HashLink smooth to="#contact">
+                Contact
+              </HashLink>
             </li>
           </ul>
         </div>
-        {/* // TODO add SVG (15:03) */}
-        <img className="icon" src={icon}></img>
+        <UilShareAlt className="nav__share" />
       </nav>
     </aside>
   );

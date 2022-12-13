@@ -1,6 +1,7 @@
 import React from "react";
 
 import Sidebar from "./ui/sidebar";
+import Footer from "./ui/footer";
 
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -22,6 +23,7 @@ const App = () => {
         <Services />
         <Testimonials />
         <Contact />
+        <Footer />
       </main>
     </>
   );

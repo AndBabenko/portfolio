@@ -1,8 +1,90 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 
-import icon from "../../../assets/svgs/tech.svg";
+import SkillsData from "../../ui/skills-data";
+
+import {
+  UilAngleDown,
+  UilBracketsCurly,
+  UilServers,
+  UilSwatchbook,
+} from "@iconscout/react-unicons";
+
+const frontendSkills = [
+  {
+    skill: "HTML",
+    level: 90,
+  },
+  {
+    skill: "CSS",
+    level: 80,
+  },
+  {
+    skill: "JS",
+    level: 85,
+  },
+  {
+    skill: "React",
+    level: 78,
+  },
+];
+const backendSkills = [
+  {
+    skill: "PHP",
+    level: 90,
+  },
+  {
+    skill: "Python",
+    level: 20,
+  },
+  {
+    skill: "MySQL",
+    level: 20,
+  },
+];
+const designSkills = [
+  {
+    skill: "Figma",
+    level: 90,
+  },
+  {
+    skill: "Scatch",
+    level: 80,
+  },
+  {
+    skill: "Photoshop",
+    level: 85,
+  },
+];
 
 const Skills: React.FC = () => {
+  const [currentSkill, setCurrentSkill] = useState<any>(frontendSkills);
+
+  const setSkills = (skillsCategory: string) => {
+    switch (skillsCategory) {
+      case "frontend":
+        setCurrentSkill(frontendSkills);
+        break;
+      case "backend":
+        setCurrentSkill(backendSkills);
+        break;
+      case "design":
+        setCurrentSkill(designSkills);
+        break;
+    }
+
+    const allTabs = document.querySelectorAll(".skills__header");
+
+    allTabs.forEach((tab) => {
+      const attr = tab.getAttribute("data-target");
+
+      if (attr !== skillsCategory) {
+        tab.classList.remove("active");
+      } else {
+        tab.classList.add("active");
+      }
+    });
+  };
+
   return (
     <>
       <section className="skills section" id="skills">
@@ -12,184 +94,49 @@ const Skills: React.FC = () => {
 
         <div className="skills__container container">
           <div className="skills__tabs">
-            {/* Frontend Skills */}
             <div
-              className="skills__header skills-active"
-              data-target="#frontend"
+              className="skills__header active"
+              data-target="frontend"
+              onClick={() => setSkills("frontend")}
             >
-              <img className="icon skills__icon" src={icon} />
+              <UilBracketsCurly className="skills__icon" />
               <div>
                 <div className="skills__title">Frontend Developer</div>
-                <span className="skills__subtitle">Some monthes</span>
+                <span className="skills__subtitle">Some months</span>
               </div>
-              <img className="icon skills__arrow" src={icon} />
+              <UilAngleDown className="skills__arrow" />
             </div>
-            {/* Backend Skills */}
-            <div className="skills__header" data-target="#backend">
-              <img className="icon skills__icon" src={icon} />
+
+            <div
+              className="skills__header "
+              data-target="backend"
+              onClick={() => setSkills("backend")}
+            >
+              <UilServers className="skills__icon" />
               <div>
                 <div className="skills__title">Backend Developer</div>
                 <span className="skills__subtitle">Less then one month </span>
               </div>
-              <img className="icon skills__arrow" src={icon} />
+              <UilAngleDown className="skills__arrow" />
             </div>
-            {/* Design Skills */}
-            <div className="skills__header" data-target="#design">
-              <img className="icon skills__icon" src={icon} />
+
+            <div
+              className="skills__header"
+              data-target="design"
+              onClick={() => setSkills("design")}
+            >
+              <UilSwatchbook className=" skills__icon" />
               <div>
                 <div className="skills__title">UI/UX design</div>
                 <span className="skills__subtitle">A few days</span>
               </div>
-              <img className="icon skills__arrow" src={icon} />
+              <UilAngleDown className="skills__arrow" />
             </div>
           </div>
 
           <div className="skills__content">
-            {/* Frontend Skills -- list */}
-            <div
-              className="skills__group skills-active"
-              data-content
-              id="frontend"
-            >
-              <div className="skills__list">
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">HTML</h3>
-                    <span className="skills__number">90%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "90%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">CSS</h3>
-                    <span className="skills__number">80%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "80%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">JavaScript</h3>
-                    <span className="skills__number">85%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "85%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">React</h3>
-                    <span className="skills__number">78%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "78%" }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Backend Skills -- list */}
-            <div className="skills__group" data-content id="backend">
-              <div className="skills__list">
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">PHP</h3>
-                    <span className="skills__number">0%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "0%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">Python</h3>
-                    <span className="skills__number">1%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "1%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">MySQL</h3>
-                    <span className="skills__number">2%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "2%" }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Design Skills -- list */}
-            <div className="skills__group" data-content id="design">
-              <div className="skills__list">
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">Figma</h3>
-                    <span className="skills__number">90%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "90%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">Scetch</h3>
-                    <span className="skills__number">2%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "2%" }}
-                    ></span>
-                  </div>
-                </div>
-
-                <div className="skills__data">
-                  <div className="skills__titles">
-                    <h3 className="skills__name">Photoshop</h3>
-                    <span className="skills__number">85%</span>
-                  </div>
-                  <div className="skills__bar">
-                    <span
-                      className="skills__percentage"
-                      style={{ width: "85%" }}
-                    ></span>
-                  </div>
-                </div>
-              </div>
+            <div className="skills__group active">
+              <SkillsData skill={currentSkill} />
             </div>
           </div>
         </div>

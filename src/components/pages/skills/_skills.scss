@@ -17,7 +17,16 @@
   }
 
   &__icon {
+    width: 2rem;
+    height: 2rem;
+    color: $skin-color;
     margin-right: $mb-0-75;
+  }
+
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
+    color: $skin-color;
   }
 
   &__title {
@@ -68,20 +77,16 @@
     background-color: $skin-color;
   }
 
-  & [data-content] {
-    display: none;
-  }
+  
 
-  &-active {
+  .active {
     .skills__arrow {
       // TODO, as well as adding margin-left to arrow
       transform: rotate(-90deg);
       transition: 0.3s;
     }
 
-    &[data-content] {
-      display: block;
-    }
+
   }
 }
 // XvScrt7825537qWe

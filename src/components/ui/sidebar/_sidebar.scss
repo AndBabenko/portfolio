@@ -36,13 +36,13 @@
     background-color: $skin-color;
     text-align: center;
     margin: 0 auto;
-  }
 
-  &__text {
-    font-size: 1.125rem;
-    color: $title-color;
-    font-weight: $font-bold;
-    line-height: 40px;
+    &-text {
+      font-size: 1.125rem;
+      color: $title-color;
+      font-weight: $font-bold;
+      line-height: 40px;
+    }
   }
 
   &__menu {
@@ -73,7 +73,7 @@
     }
   }
 
-  &__item-active,
+  &__item.active,
   &__item:hover {
     a {
       color: $skin-color;
@@ -87,6 +87,13 @@
   }
 
   &__share {
-    width: fit-content;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $skin-color;
+    }
   }
 }

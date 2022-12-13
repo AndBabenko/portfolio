@@ -1,0 +1,56 @@
+.footer {
+  &__bg {
+    background-color: $box-color;
+    padding: 3rem 0 3.5rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.6rem;
+  }
+
+  &__title {
+    font-size: $h1-font-size;
+    margin-bottom: $mb-0-25;
+    color: $title-color;
+  }
+
+  &__subtitle {
+    font-size: $small-font-size;
+    color: $title-color;
+  }
+
+  &__link {
+    color: $title-color;
+    &-container {
+      display: flex;
+      justify-self: center;
+      column-gap: 2rem;
+    }
+
+    &:hover {
+      color: $skin-color;
+    }
+  }
+
+  &__social {
+    color: $title-color;
+    justify-self: flex-end;
+
+    &-item {
+      margin-right: $mb-1-5;
+
+      &:hover {
+        //TODO skin-color for SVG
+        color: $skin-color;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: $smaller-font-size;
+    text-align: center;
+    margin-top: 4.5rem;
+  }
+}
