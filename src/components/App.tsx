@@ -1,26 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import Sidebar from "./ui/sidebar";
-import Footer from "./ui/footer";
+import Sidebar from "./ui/Sidebar";
+import Footer from "./ui/Footer";
 
-import Home from "./pages/home";
-import About from "./pages/about";
-import Skills from "./pages/skills";
-import Portfolio from "./pages/portfolio";
-import Services from "./pages/services";
-import Testimonials from "./pages/testimonials";
-import Contact from "./pages/contact";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Portfolio from "./pages/Portfolio";
+import Testimonials from "./pages/Testimonials";
+import Contact from "./pages/Contact";
 
 const App = () => {
+  const [currentSection, setCurrentSection] = useState("home");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+    function onSectionChange() {
+      const scroll = window.pageYOffset;
+      if (sections) {
+        sections.forEach((section) => {
+          const height = section.offsetHeight;
+          const top = section.offsetTop - 50;
+          const id = section.getAttribute("id");
+
+          if (id && scroll > top && scroll <= top + height) {
+            setCurrentSection(id);
+          }
+        });
+      }
+    }
+
+    window.addEventListener("scroll", onSectionChange);
+    return () => {
+      window.removeEventListener("scroll", onSectionChange);
+    };
+  }, []);
+
   return (
     <>
-      <Sidebar />
+      <Sidebar currentSection={currentSection} />
       <main>
         <Home />
         <About />
         <Skills />
         <Portfolio />
-        <Services />
         <Testimonials />
         <Contact />
         <Footer />

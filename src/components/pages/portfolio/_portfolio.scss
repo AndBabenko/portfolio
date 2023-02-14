@@ -28,34 +28,17 @@
     padding-top: 1rem;
   }
 
-  &__card {
-    background-color: $box-color;
-    padding: 1.25rem;
-    border-radius: 0.5rem;
+  @media screen and (max-width: 1216px) {
+    &__container {
+      grid-template-columns: repeat(2, 330px);
+      gap: 2.5rem;
+    }
   }
 
-  &__img {
-    border-radius: 0.5rem;
-    margin-bottom: $mb-1;
-  }
-
-  &__title {
-    font-size: $normal-font-size;
-    font-weight: $font-medium;
-    margin-bottom: $mb-0-5;
-  }
-
-  &__button {
-    display: flex;
-    align-items: center;
-    column-gap: 0.25rem;
-    color: $skin-color;
-    font-size: $small-font-size;
-    cursor: pointer;
-    //TODO Add hover animation (1.38.34)
-  }
-
-  &__details {
-    display: none;
+  @media screen and (max-width: 768px) {
+    &__container {
+      grid-template-columns: 330px;
+      gap: 2.5rem;
+    }
   }
 }

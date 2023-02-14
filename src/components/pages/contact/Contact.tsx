@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 
-import icon from "../../../assets/svgs/tech.svg";
+import {
+  UilEnvelope,
+  UilWhatsappAlt,
+  UilTelegram,
+  UilArrowRight,
+} from "@iconscout/react-unicons";
 
-//TODO Rewrite contact input/focus + TS
-//TODO Delete SPAN and rework animation
-//TODO Make label unclickable
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Button from "../../ui/Button";
 
 const Contact = () => {
+  const inputRef = useRef<any>(null);
+
   const onInputFocus = (e: any) => {
     const parent = e.target.parentNode;
     parent.classList.add("focus");
@@ -19,6 +27,17 @@ const Contact = () => {
     }
   };
 
+  function onCopy(data: string) {
+    navigator.clipboard.writeText(data);
+    toast("Copied!");
+  }
+
+  function setFocus() {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }
+
   return (
     <>
       <section className="contact section" id="contact">
@@ -26,95 +45,136 @@ const Contact = () => {
           Contact Me
         </h2>
         <div className="contact__container container">
+          <div className="home__popup">
+            <ToastContainer
+              position="top-right"
+              autoClose={1500}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss={false}
+              pauseOnHover={false}
+              theme="dark"
+            />
+          </div>
           <div className="contact__content">
             <div className="contact__info">
-              <div className="card">
-                <img className="icon card__icon" src={icon} />
-                <h3 className="card__title">Email</h3>
-                <span className="card__data">and.babenko96@gmail.com</span>
-                <span className="card__button">
+              <div className="contact__card">
+                <UilEnvelope className="contact__card-icon" />
+                <h3 className="contact__card-title">Email</h3>
+                <span
+                  className="contact__card-data"
+                  onClick={() => onCopy("and.babenko96@gmail.com")}
+                >
+                  and.babenko96@gmail.com
+                </span>
+                <span
+                  className="contact__card-button"
+                  onClick={() => setFocus()}
+                >
                   Write Me:
-                  <img className="icon card__button__icon" src={icon} />
+                  <UilArrowRight className="contact__card-arrow" />
                 </span>
               </div>
 
-              <div className="card">
-                <img className="icon card__icon" src={icon} />
-                <h3 className="card__title">Whatsapp</h3>
-                <span className="card__data">3333333333</span>
-                <span className="card__button">
+              <div className="contact__card">
+                <UilWhatsappAlt className="contact__card-icon" />
+                <h3 className="contact__card-title">Whatsapp</h3>
+                <span
+                  className="contact__card-data"
+                  onClick={() => onCopy("+380(95)-476-87-30")}
+                >
+                  +380(95)-476-87-30
+                </span>
+                <span
+                  className="contact__card-button"
+                  onClick={() => setFocus()}
+                >
                   Write Me:
-                  <img className="icon card__button__icon" src={icon} />
+                  <UilArrowRight className="contact__card-arrow" />
                 </span>
               </div>
 
-              <div className="card">
-                <img className="icon card__icon" src={icon} />
-                <h3 className="card__title">Messenger</h3>
-                <span className="card__data">fb.com</span>
-                <span className="card__button">
+              <div className="contact__card">
+                <UilTelegram className="contact__card-icon" />
+                <h3 className="contact__card-title">Telegram</h3>
+                <span
+                  className="contact__card-data"
+                  onClick={() => onCopy("@Nicandros")}
+                >
+                  @Nicandros
+                </span>
+                <span
+                  className="contact__card-button"
+                  onClick={() => setFocus()}
+                >
                   Write Me:
-                  <img className="icon card__button__icon" src={icon} />
+                  <UilArrowRight className="contact__card-arrow" />
                 </span>
               </div>
             </div>
           </div>
 
           <div className="contact__content">
-            <form action="" className="form">
+            <form className="form" autoComplete="off">
               <div className="form__container">
-                <span>Username</span>
+                <span className="form__text-top">Name</span>
                 <input
+                  ref={inputRef}
                   onFocus={onInputFocus}
                   onBlur={onInputBlur}
+                  id="formName"
                   type="text"
                   className="form__input"
+                  autoComplete="new-name"
                 />
-                <label className="form__label" htmlFor="">
-                  UserName
+                <label className="form__label" htmlFor="formName">
+                  Name
                 </label>
               </div>
               <div className="form__container">
-                <span>Email</span>
+                <span className="form__text-top">Email</span>
                 <input
                   onFocus={onInputFocus}
                   onBlur={onInputBlur}
-                  type="text"
+                  type="email"
                   className="form__input"
+                  id="formMail"
+                  autoComplete="new-mail"
                 />
-                <label className="form__label" htmlFor="">
+                <label className="form__label" htmlFor="formMail">
                   Email
                 </label>
               </div>
               <div className="form__container">
-                <span>Phone</span>
+                <span className="form__text-top">Phone</span>
                 <input
                   onFocus={onInputFocus}
                   onBlur={onInputBlur}
                   type="text"
                   className="form__input"
+                  id="formPhone"
+                  autoComplete="new-phone"
                 />
-                <label className="form__label" htmlFor="">
+                <label className="form__label" htmlFor="formPhone">
                   Phone
                 </label>
               </div>
               <div className="form__container">
-                <span>Username</span>
+                <span className="form__text-top">Message</span>
                 <textarea
                   onFocus={onInputFocus}
                   onBlur={onInputBlur}
-                  name=""
-                  id=""
+                  name="formMessage"
+                  id="formMessage"
                   className="form__textarea"
+                  autoComplete="new-message"
                 ></textarea>
-                <label className="form__textarea-label" htmlFor="">
-                  Username
+                <label className="form__textarea-label" htmlFor="formMessage">
+                  Message
                 </label>
               </div>
-              <button type="submit" className="button">
-                <img src={icon} className="icon" />
-                Send Message
-              </button>
+              <Button text="Send Message" navigate={false} />
             </form>
           </div>
         </div>

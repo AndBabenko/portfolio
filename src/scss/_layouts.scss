@@ -1,15 +1,15 @@
 .btd {
   &1 {
-    border: 1px solid red;
+    border: 1px solid red !important;
   }
   &2 {
-    border: 1px solid plum;
+    border: 1px solid plum !important;
   }
   &3 {
-    border: 1px solid green;
+    border: 1px solid green !important;
   }
   &4 {
-    border: 1px solid yellow;
+    border: 1px solid yellow !important;
   }
 }
 
@@ -43,11 +43,6 @@ main {
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
-
-  @media (max-width: 1400px) {
-    margin-left: $mb-2-5;
-    margin-right: $mb-2-5;
-  }
 }
 
 .section {
@@ -76,5 +71,29 @@ main {
   &-thumb {
     background-color: $scroll-thumb-color;
     border-radius: 0.5rem;
+  }
+}
+
+.swiper-slide {
+  // testimonial slide lib item, testimonialCard parent
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1408px) {
+  .container {
+    margin-left: $mb-2-5;
+    margin-right: $mb-2-5;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main {
+    margin-left: 0;
+  }
+
+  .container {
+    margin-left: $mb-1-5;
+    margin-right: $mb-1-5;
   }
 }

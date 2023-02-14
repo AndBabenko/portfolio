@@ -1,14 +1,16 @@
-@import "../components/ui/sidebar/sidebar";
+@import "../components/ui/Sidebar/sidebar";
+@import "../components/ui/Footer/footer";
 
-@import "../components/pages/home/home";
-@import "../components/pages/about/about";
-@import "../components/pages/skills/skills";
-@import "../components/pages/portfolio/portfolio";
-@import "../components/pages/services/services";
-@import "../components/pages/testimonials/testimonials";
-@import "../components/pages/contact/contact";
+@import "../components/pages/Home/home";
+@import "../components/pages/About/about";
+@import "../components/pages/Skills/skills";
+@import "../components/pages/Portfolio/portfolio";
+@import "../components/pages/Testimonials/testimonials";
+@import "../components/pages/Contact/contact";
 
-@import "../components/ui/portfolio-popup/portfolio-popup";
-@import "../components/ui/footer/footer";
-@import "../components/ui/button/button";
-@import "../components/ui/skills-data/skills-data";
+@import "../components/ui/SkillsPercents/skillsPercents";
+@import "../components/ui/PortfolioCard/portfolioCard";
+@import "../components/ui/PortfolioPopup/portfolioPopup";
+@import "../components/ui/TestimotialCard/testimonialCard";
+
+@import "../components/ui/Button/button";

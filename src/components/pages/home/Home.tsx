@@ -7,14 +7,13 @@ import {
   UilFacebook,
   UilInstagramAlt,
   UilLinkedin,
-  UilFacebookMessenger,
   UilWhatsappAlt,
   UilTelegram,
   UilEnvelope,
 } from "@iconscout/react-unicons";
 
 import homeImg from "../../../assets/imgs/home-img.png";
-import Button from "../../ui/button";
+import Button from "../../ui/Button";
 
 const Home: React.FC = () => {
   function onCopy(data: string) {
@@ -79,32 +78,19 @@ const Home: React.FC = () => {
               debitis. Qui, ipsa?
             </p>
 
-            <Button text="More About Me" target="about" />
+            <Button text="More About Me" navigate target="about" />
           </div>
 
           <div className="home__info">
-            <div className="home__info-item">
-              <UilFacebookMessenger className="home__info-image" />
-              <div className="dev">
-                <h3 className="home__info-title">Messenger</h3>
-                <span
-                  className="home__info-subtitle"
-                  onClick={() => onCopy("+38-095-476-8730")}
-                >
-                  +38-095-476-8730
-                </span>
-              </div>
-            </div>
-
             <div className="home__info-item">
               <UilWhatsappAlt className="home__info-image" />
               <div>
                 <h3 className="home__info-title">Whatsapp</h3>
                 <span
                   className="home__info-subtitle"
-                  onClick={() => onCopy("+38-095-476-8730")}
+                  onClick={() => onCopy("+380(95)-476-8730")}
                 >
-                  +38-095-476-8730
+                  +380(95)-476-8730
                 </span>
               </div>
             </div>

@@ -10,7 +10,7 @@ import {
 } from "@iconscout/react-unicons";
 
 import aboutImg from "../../../assets/imgs/about-img.jpg";
-import Button from "../../ui/button";
+import Button from "../../ui/Button";
 
 const About: React.FC = () => {
   return (
@@ -26,29 +26,31 @@ const About: React.FC = () => {
             <h3 className="about__header">Hi, I`m Andrey</h3>
             <p className="about__description">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem,
-              obcaecati.
+              obcaecati. Lorem, ipsum dolor sit amet consectetur adipisicing
+              elit. Autem, obcaecati. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Autem, obcaecati.
             </p>
 
             <div className="about__info">
               <div className="about__info-box">
-                <UilAward />
+                <UilAward className="about__info-icon" />
                 <h3 className="about__info-title">Experience</h3>
                 <span className="about__info-subtitle">1+ year</span>
               </div>
 
               <div className="about__info-box">
-                <UilSuitcase />
+                <UilSuitcase className="about__info-icon" />
                 <h3 className="about__info-title">Completed</h3>
                 <span className="about__info-subtitle">3 projects</span>
               </div>
 
               <div className="about__info-box">
-                <UilHeadphones />
+                <UilHeadphones className="about__info-icon" />
                 <h3 className="about__info-title">Support</h3>
                 <span className="about__info-subtitle">Online 24/7</span>
               </div>
             </div>
-            <Button text="Contact Me" target="contact" />
+            <Button text="Contact Me" navigate target="contact" />
           </div>
         </div>
       </section>

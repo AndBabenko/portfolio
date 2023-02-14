@@ -28,10 +28,5 @@ declare module ".*webp" {
   export default content;
 }
 
-declare module "mixitup" {
-  const content: any;
-  export default content;
-}
-
 declare module "@iconscout/react-unicons";
 declare module "react-router-hash-link";

@@ -10,6 +10,10 @@
   height: 6px;
   background-color: $color;
   border-radius: 50%;
+
+  @media screen and (max-width: 1024px) {
+    bottom: 0;
+  }
 }
 
 .sidebar {
@@ -19,11 +23,11 @@
   border-right: 1px solid $box-color;
   padding: 1.8rem 0;
   margin-right: 100px;
+  background-color: $body-color;
 }
 
 .nav {
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,22 +59,24 @@
     display: flex;
     flex-direction: row-reverse;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
   }
 
   &__item {
     position: relative;
-    height: 100%;
+    // height: 100%;
     padding: 0 1rem;
 
     a {
-      line-height: 100px;
+      // line-height: 100px;
       font-weight: $font-medium;
       color: $title-color;
       transition-duration: 0.5s;
     }
-    &::after {
-      @include selected-dot(inherit);
-    }
+    // &::after {
+    //   @include selected-dot(inherit);
+    // }
   }
 
   &__item.active,
@@ -80,7 +86,7 @@
     }
 
     &::after {
-      transition-duration: 0.5s;
+      transition-duration: 0.1s;
       transition-timing-function: ease-out;
       @include selected-dot($skin-color);
     }
@@ -94,6 +100,75 @@
 
     &:hover {
       color: $skin-color;
+    }
+  }
+
+  &__toggle {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    position: fixed;
+    right: 1.5rem;
+    top: 2rem;
+    border-radius: 0.25rem;
+    background-color: $skin-color;
+    z-index: 2;
+    color: $title-color;
+    padding: 5px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__close {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    z-index: 99;
+    // Hide sidebar
+    transform: translateX(-100%);
+  }
+
+  .nav {
+    &__logo,
+    &__share {
+      display: none;
+    }
+
+    &__menu {
+      height: 100%;
+      width: 100%;
+      transform: translateX(0);
+      justify-content: center;
+    }
+
+    &__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item {
+      padding: 1rem 0;
+      height: inherit;
+    }
+    &__close {
+      display: block;
+    }
+
+    &__toggle {
+      display: flex;
     }
   }
 }

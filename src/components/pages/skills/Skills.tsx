@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import SkillsData from "../../ui/skills-data";
+import SkillsPercents from "../../ui/SkillsPercents";
 
 import {
   UilAngleDown,
@@ -135,9 +135,10 @@ const Skills: React.FC = () => {
           </div>
 
           <div className="skills__content">
-            <div className="skills__group active">
-              <SkillsData skill={currentSkill} />
-            </div>
+            <SkillsPercents
+              className="skills__group"
+              currentSkill={currentSkill}
+            />
           </div>
         </div>
       </section>

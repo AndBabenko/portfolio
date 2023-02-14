@@ -50,7 +50,39 @@
     }
 
     &-icon {
-      font-size: 0;
+      color: $skin-color;
+    }
+  }
+
+  @media screen and (max-width: 1216px) {
+    &__container {
+      column-gap: 2.5rem;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__img {
+      width: 350px;
+    }
+
+    &__container {
+      grid-template-columns: 1fr;
+      row-gap: 2.5rem;
+    }
+
+    &__data {
+      text-align: center;
+    }
+
+    &__description {
+      text-align: center;
+      padding: 0 4rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__img {
+      width: 250px;
     }
   }
 }
@@ -74,6 +106,26 @@
 
   &__icon {
     font-size: 0;
+  }
+
+  .education,
+  .experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__container {
+      grid-template-columns: repeat(2, 290px);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__container {
+      grid-template-columns: repeat(2, 260px);
+      column-gap: 2rem;
+    }
   }
 }
 

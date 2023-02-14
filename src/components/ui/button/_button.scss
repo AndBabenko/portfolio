@@ -1,5 +1,6 @@
 .button {
   background-color: $box-color;
+  cursor: pointer;
 
   &__container {
     display: inline-flex;
@@ -37,6 +38,7 @@
 
     &:hover::after {
       transform: scale(1);
+      border-radius: 0.25rem;
     }
   }
 

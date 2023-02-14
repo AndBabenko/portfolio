@@ -28,7 +28,6 @@
     "imagemin": "^8.0.1",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^2.6.1",
-    "mixitup": "^3.3.1",
     "node-sass": "^8.0.0",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "postcss-loader": "^7.0.1",
