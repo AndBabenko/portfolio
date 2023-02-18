@@ -74,4 +74,11 @@
       }
     }
   }
+
+  @media screen and (max-width: 350px) {
+    &__container {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+  }
 }

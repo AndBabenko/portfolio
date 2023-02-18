@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   return (
     <>
       <section className="home" id="home">
-        <div className="container">
+        <div className="home__container container">
           <div className="home__popup">
             <ToastContainer
               position="top-right"
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          {/* <img src={homeImg} className="home__img"></img> */}
+          <img src={homeImg} className="home__img"></img>
 
           <div className="home__data">
             <h1 className="home__title">Hi, I'm Andrey!</h1>

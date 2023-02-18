@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
 
     entry: {
       /* 4 */
-      app: ["./index.js", "./scss/style.scss"],
+      app: ["./index.tsx", "./scss/style.scss"],
     },
 
     output: {

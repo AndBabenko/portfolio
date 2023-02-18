@@ -10,7 +10,7 @@ import Portfolio from "./pages/Portfolio";
 import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 
-const App = () => {
+const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState("home");
 
   useEffect(() => {

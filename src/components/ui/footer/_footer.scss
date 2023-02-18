@@ -23,6 +23,8 @@
 
   &__link {
     color: $title-color;
+    display: flex;
+
     &-container {
       display: flex;
       justify-self: center;
@@ -61,5 +63,49 @@
     font-size: $smaller-font-size;
     text-align: center;
     margin-top: 4.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__title {
+      font-size: $h2-font-size;
+    }
+
+    &__link {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 3rem;
+    }
+
+    &__social {
+      justify-self: start;
+    }
+
+    &__link-container {
+      flex-direction: column;
+      row-gap: 1.5rem;
+    }
+
+    &__bg {
+      padding: 2rem 0 3rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__container {
+      grid-template-columns: 1fr;
+    }
+
+    &__link-container {
+      flex-direction: row;
+    }
+
+    &__social-links {
+      flex-direction: row;
+    }
   }
 }

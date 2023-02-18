@@ -1,4 +1,16 @@
 .contact {
+  &__content {
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      button {
+        background-color: inherit;
+      }
+    }
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 300px 400px;
@@ -63,10 +75,12 @@
   }
 
   .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+
     &__container {
       position: relative;
-      margin-top: 0.1rem;
-      margin-bottom: 1.9rem;
     }
 
     &__input,
@@ -121,7 +135,7 @@
       color: transparent;
       padding: 0.4rem;
       pointer-events: none;
-      z-index: 500;
+      z-index: 50;
 
       &::before,
       &::after {
@@ -155,6 +169,35 @@
       .form__text-top::after {
         opacity: 1;
       }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__container {
+      grid-template-columns: 270px 360px;
+      column-gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__container {
+      grid-template-columns: 400px;
+      row-gap: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__container {
+      grid-template-columns: 300px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    &__container {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+    .form {
+      row-gap: 1rem;
     }
   }
 }

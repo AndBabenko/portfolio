@@ -29,8 +29,8 @@
 
   &__close {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 0.75rem;
+    right: 0.75rem;
     cursor: pointer;
     transition: 0.3s;
 
@@ -48,16 +48,20 @@
     margin-bottom: $mb-0-25;
   }
 
+  &__details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+
   &__title {
     font-size: $h3-font-size;
     font-weight: $font-medium;
-    margin-bottom: $mb-1;
   }
 
   &__description {
     font-size: $normal-font-size;
-    margin-bottom: $mb-1-5;
-    height: 130px;
+    height: 140px;
     overflow-y: auto;
   }
 
@@ -89,9 +93,29 @@
         margin-bottom: $mb-0-5;
       }
     }
+  }
 
-    &__title {
-      margin-bottom: $mb-0-75;
+  @media screen and (max-width: 576px) {
+    &__inner {
+      padding: 2rem;
+    }
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+
+    &__details {
+      row-gap: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    &__inner {
+      padding: 1.5rem;
+    }
+    &__content {
+      row-gap: 1rem;
     }
   }
 }

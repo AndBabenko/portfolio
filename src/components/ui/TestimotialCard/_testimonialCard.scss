@@ -55,12 +55,15 @@
       font-size: $small-font-size;
     }
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     &__card {
       padding: 1.25rem 1.5rem;
+      width: 270px;
     }
   }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 576px) {
+    &__card {
+      width: 320px;
+    }
   }
 }

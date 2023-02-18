@@ -37,8 +37,21 @@
 
   @media screen and (max-width: 768px) {
     &__container {
-      grid-template-columns: 330px;
+      grid-template-columns: repeat(2, 270px);
       gap: 2.5rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    &__container {
+      grid-template-columns: 320px;
+      row-gap: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    &__container {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
     }
   }
 }

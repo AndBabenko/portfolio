@@ -8,8 +8,6 @@ import {
   UilLinkedin,
 } from "@iconscout/react-unicons";
 
-import icon from "../../../assets/svgs/tech.svg";
-
 const Footer = () => {
   return (
     <>
@@ -40,7 +38,7 @@ const Footer = () => {
             </ul>
 
             <div className="footer__social">
-              <div className="home__social-links">
+              <div className="footer__social-links">
                 <a
                   target="_blank"
                   href="https://www.facebook.com/and.babenko"

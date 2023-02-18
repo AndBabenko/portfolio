@@ -34,7 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentSection }) => {
   return (
     <>
       <UilBars className="nav__toggle" id="nav-toggle" />
-      <aside className="sidebar btd1" id="sidebar">
+      <aside className="sidebar sidebar__show" id="sidebar">
         <nav className="nav">
           <div className="nav__logo">
             <span className="nav__logo-text">A</span>

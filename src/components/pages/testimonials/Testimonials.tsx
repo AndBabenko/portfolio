@@ -51,7 +51,7 @@ const Testimonials = () => {
           loop={true}
           grabCursor={true}
           breakpoints={{
-            350: {
+            576: {
               slidesPerView: 1,
             },
             768: {

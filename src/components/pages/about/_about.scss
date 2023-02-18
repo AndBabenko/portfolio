@@ -68,6 +68,7 @@
     &__container {
       grid-template-columns: 1fr;
       row-gap: 2.5rem;
+      justify-content: center;
     }
 
     &__data {
@@ -80,9 +81,17 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 576px) {
     &__img {
-      width: 250px;
+      width: 300px;
+    }
+    &__info {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 0.5rem;
+    }
+
+    &__description {
+      padding: 0px;
     }
   }
 }
@@ -125,6 +134,20 @@
     &__container {
       grid-template-columns: repeat(2, 260px);
       column-gap: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__container {
+      grid-template-columns: 320px;
+      row-gap: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    &__container {
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
     }
   }
 }

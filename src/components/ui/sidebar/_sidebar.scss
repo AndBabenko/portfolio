@@ -19,11 +19,16 @@
 .sidebar {
   position: fixed;
   width: 100px;
-  height: 100vh;
+  height: 100%;
   border-right: 1px solid $box-color;
   padding: 1.8rem 0;
   margin-right: 100px;
   background-color: $body-color;
+  transition: 0.3s;
+
+  // &__show {
+  //   transform: translateX(0) !important;
+  // }
 }
 
 .nav {
@@ -169,6 +174,15 @@
 
     &__toggle {
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .nav {
+      &__toggle {
+        right: inherit;
+        left: 1.5rem;
+      }
     }
   }
 }
