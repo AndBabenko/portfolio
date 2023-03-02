@@ -1,0 +1,193 @@
+@import "../../shared/styles/variables.scss";
+
+.contact {
+  @include section;
+
+  &Container {
+    @include container;
+
+    display: grid;
+    grid-template-columns: 300px 400px;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.icon {
+  margin-bottom: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.info {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.card {
+  background-color: $box-color;
+  padding: 1rem;
+
+  border-radius: 0.5rem;
+  text-align: center;
+
+  > h3 {
+    font-size: $small-font-size;
+    font-weight: $font-medium;
+  }
+
+  > p {
+    font-size: $small-font-size;
+    display: block;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+
+  > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.25rem;
+    color: $theme-color;
+    font-size: $small-font-size;
+    cursor: pointer;
+
+    .arrowIcon {
+      width: 1.5rem;
+      height: 1.5rem;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      .arrowIcon {
+        transform: translateX(0.25rem);
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.formItem {
+  position: relative;
+
+  > span {
+    // Text on the top border
+    position: absolute;
+    top: 0;
+    left: 25px;
+    transform: translateY(-50%);
+    font-size: $smallest-font-size;
+    color: transparent;
+    padding: 0.4rem;
+    pointer-events: none;
+    z-index: $z-contactSpan;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 5px;
+      background-color: $body-color;
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+    &::before {
+      left: 50%;
+    }
+    &::after {
+      right: 50%;
+    }
+  }
+
+  > input,
+  > textarea {
+    font-family: $body-font;
+    width: 100%;
+    border: 2px solid $text-color;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    color: $title-color;
+    font-weight: $font-regular;
+    font-size: $normal-font-size;
+    outline: none;
+    letter-spacing: 0.5px;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+  }
+
+  > textarea {
+    min-height: 140px;
+    resize: none;
+  }
+
+  > label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    color: $text-color;
+    font-size: 1rem;
+    font-weight: $font-medium;
+    z-index: $z-contactLabel;
+    transition: 0.5s;
+    cursor: text;
+  }
+
+  &.focus {
+    > span::before,
+    > span::after {
+      opacity: 1;
+    }
+
+    label {
+      top: 0;
+      transform: translateY(-50%);
+      left: 25px;
+      font-size: $smallest-font-size;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contactContainer {
+    grid-template-columns: 270px 360px;
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactContainer {
+    grid-template-columns: 400px;
+    row-gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contactContainer {
+    grid-template-columns: 300px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  .form {
+    row-gap: 1rem;
+  }
+}

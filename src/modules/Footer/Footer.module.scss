@@ -1,0 +1,118 @@
+@import "../../shared/styles/variables.scss";
+
+.footer {
+  margin-left: 100px;
+  background-color: $box-color;
+  padding: 3rem 0 1.5rem 0;
+
+  > div {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.6rem;
+    align-items: start;
+  }
+
+  > p {
+    font-size: $smallest-font-size;
+    text-align: center;
+    margin-top: 4.5rem;
+  }
+}
+
+.content {
+  > h2 {
+    font-size: $h2-font-size;
+    margin-bottom: 0.25rem;
+    color: $title-color;
+  }
+
+  > p {
+    font-size: $small-font-size;
+    color: $title-color;
+  }
+}
+
+.links {
+  display: flex;
+  justify-self: center;
+  column-gap: 2rem;
+
+  > a {
+    color: $title-color;
+    text-align: center;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}
+
+.social {
+  justify-self: flex-end;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    > p {
+      margin-top: 4rem;
+    }
+  }
+
+  .content {
+    > h2 {
+      font-size: $h3-font-size;
+    }
+  }
+
+  .link {
+    > a {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 2rem;
+    margin-left: 0;
+
+    > div {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 3rem;
+    }
+
+    > p {
+      margin-top: 3rem;
+    }
+  }
+
+  .social {
+    justify-self: start;
+  }
+
+  .links {
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    padding: 2rem 0 1rem;
+    margin-left: 0;
+
+    > div {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+  }
+
+  .links {
+    flex-direction: row;
+  }
+
+  .social {
+    flex-direction: row;
+  }
+}

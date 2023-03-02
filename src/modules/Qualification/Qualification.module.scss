@@ -1,0 +1,109 @@
+@import "../../shared/styles/variables.scss";
+
+.qual {
+  @include section;
+
+  &Container {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(2, 340px);
+    column-gap: 3rem;
+    justify-content: center;
+  }
+}
+
+.icon {
+  font-size: 0;
+}
+
+.qualSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+
+  h3 {
+    font-size: $h3-font-size;
+    font-weight: $font-medium;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+}
+
+.qualItem {
+  position: relative;
+  padding-left: 3rem;
+
+  h4 {
+    font-size: $normal-font-size;
+    margin-bottom: 0.5rem;
+    font-weight: $font-medium;
+  }
+
+  p {
+    font-size: $small-font-size;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    column-gap: 0.4rem;
+    font-size: $small-font-size;
+    color: $theme-color;
+  }
+
+  &::before {
+    // line
+    content: "";
+    width: 1px;
+    position: absolute;
+    left: 0.48rem;
+    top: 0;
+    height: 100%;
+    background-color: $theme-color;
+  }
+
+  &::after {
+    // dot
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: $theme-color;
+    border: 2px solid $theme-color;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.4s;
+  }
+  &:hover:after {
+    background-color: $body-color;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .qualContainer {
+    grid-template-columns: repeat(2, 290px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .qualContainer {
+    grid-template-columns: repeat(2, 260px);
+    column-gap: 2rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .qualContainer {
+    grid-template-columns: 320px;
+    row-gap: 4rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .qualContainer {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+}

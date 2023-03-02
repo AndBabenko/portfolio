@@ -1,0 +1,184 @@
+@import "/src/shared/styles/variables.scss";
+
+@mixin selected-dot($color) {
+  // Dot near the selected and hoover nav-element
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.2rem;
+  margin: auto;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: $color;
+  border-radius: 50%;
+
+  @media screen and (max-width: 768px) {
+    bottom: 0;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  border-right: 1px solid $box-color;
+  padding: 1.8rem 0;
+  transition: 0.3s;
+  z-index: $z-sidebar;
+  background-color: $body-color;
+
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.shown {
+  transform: translateX(0) !important;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $theme-color;
+  text-align: center;
+
+  span {
+    font-size: 1.125rem;
+    color: $title-color;
+    font-weight: $font-bold;
+    line-height: 40px;
+  }
+}
+
+.menu {
+  transform: rotate(-90deg);
+  display: flex;
+  width: fit-content;
+
+  ul {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.menuItem {
+  position: relative;
+  padding: 0 1rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  a {
+    font-weight: $font-medium;
+    color: $title-color;
+    transition-duration: 0.3s;
+  }
+
+  &::after {
+    // For transition effect
+    @include selected-dot(inherit);
+  }
+
+  &.active,
+  &:hover {
+    a {
+      color: $theme-color;
+    }
+
+    &::after {
+      transition-duration: 0.3s;
+      transition-timing-function: ease-out;
+      @include selected-dot($theme-color);
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+
+  &Share {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+
+  &Toggle {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    position: fixed;
+    right: 1.5rem;
+    top: 2rem;
+    border-radius: 0.25rem;
+    background-color: $theme-color;
+    color: $title-color;
+    padding: 5px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: $z-zidebarToggle;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    transform: translateX(-100%);
+    // z-index: 99;
+    // margin-right: 0;
+  }
+
+  .menu {
+    height: 100%;
+    width: 100%;
+    transform: translateX(0);
+    justify-content: center;
+
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .menuItem {
+    padding: 1rem 0;
+    height: inherit;
+  }
+
+  .logo,
+  .btnShare {
+    display: none;
+  }
+
+  .btnOpen,
+  .btnClose {
+    display: flex;
+  }
+
+  .btnToggle {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .btnOpen {
+    right: inherit;
+    left: 1.5rem;
+  }
+}

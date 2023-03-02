@@ -1,0 +1,100 @@
+@import "../../shared/styles/variables.scss";
+
+.testim {
+  @include section;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &Container {
+    @include container;
+
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.cardContainer {
+  background-color: $box-color;
+  padding: 1.8rem;
+  border-radius: 0.5rem;
+  // width: 330px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  > p {
+    font-size: $small-font-size;
+    height: 85px;
+  }
+
+  > h3 {
+    font-size: $normal-font-size;
+  }
+}
+
+.icon {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: $theme-color;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 3rem;
+  }
+}
+
+.clientData {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.4rem;
+
+  > h4 {
+    font-size: $h3-font-size;
+    font-weight: $font-medium;
+    color: $title-color;
+  }
+
+  > span {
+    font-size: $small-font-size;
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .testimContainer {
+    width: 620px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cardContainer {
+    padding: 1.5rem;
+    width: 270px;
+  }
+
+  .testimContainer {
+    max-width: 90vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cardContainer {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .cardContainer {
+    width: 280px;
+  }
+}

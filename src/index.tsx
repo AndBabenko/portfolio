@@ -1,17 +1,7 @@
-import "./index.html";
-import "./types/types";
-
-import React from "react";
-import * as ReactDOMClient from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-
-import App from "./components/App";
+import { createRoot } from "react-dom/client";
+import App from "./app";
 
 const rootElement = document.getElementById("root") as HTMLDivElement;
-const root = ReactDOMClient.createRoot(rootElement);
+const root = createRoot(rootElement);
 
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+root.render(<App />);

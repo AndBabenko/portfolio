@@ -1,0 +1,125 @@
+@import "../../shared/styles/variables.scss";
+
+.skills {
+  @include section;
+
+  &Container {
+    display: grid;
+    grid-template-columns: 360px 320px;
+    column-gap: 3rem;
+    justify-content: center;
+
+    @include container;
+  }
+
+  .headersSection {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    align-items: stretch;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  h3 {
+    font-size: $h3-font-size;
+    font-weight: $font-medium;
+  }
+
+  p {
+    font-size: $small-font-size;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  color: $theme-color;
+  margin-right: 0.75rem;
+}
+
+.arrow {
+  width: 2rem;
+  height: 2rem;
+  color: $theme-color;
+  margin-left: auto;
+  transition: 0.3s;
+}
+.active {
+  .arrow {
+    transform: rotate(-90deg);
+  }
+}
+
+.skillsSection {
+  display: grid;
+  row-gap: 1.8rem;
+}
+
+.skillTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+
+  h4 {
+    font-size: $normal-font-size;
+    font-weight: $font-medium;
+  }
+}
+
+.skillBar {
+  height: 5px;
+
+  span {
+    height: 100%;
+    border-radius: 0.25rem;
+    background-color: $box-color;
+    display: block;
+    background-color: $theme-color;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .skillsContainer {
+    grid-template-columns: 310px 270px;
+    column-gap: 2.5rem;
+  }
+
+  .skillsSection {
+    row-gap: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skillsContainer {
+    grid-template-columns: 300px;
+    row-gap: 3rem;
+  }
+
+  .arrow {
+    transform: rotate(-90deg);
+  }
+
+  .active {
+    .arrow {
+      transform: rotate(0);
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .skillsContainer {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+
+  .skillsSection {
+    row-gap: 1.3rem;
+  }
+}
