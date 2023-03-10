@@ -12,8 +12,8 @@ import styles from "./Contact.module.scss";
 import Button from "shared/ui/Button";
 import { sections, contactData } from "shared/libs";
 
-const Contact: React.FC = () => {
-  const inputRef = useRef<any>(null);
+const Contact: React.FC = React.memo(() => {
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onFocus = (
     evt: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
@@ -22,7 +22,6 @@ const Contact: React.FC = () => {
     parent?.classList.add(styles.focus);
   };
 
-  // HTMLTextAreaElement, Element;
   const onBlur = (
     evt: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
   ) => {
@@ -134,6 +133,6 @@ const Contact: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Contact;

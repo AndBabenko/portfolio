@@ -13,74 +13,41 @@ export type projectType = {
 export const projects: projectType[] = [
   {
     id: 1,
-    shortName: "Web Design 01",
-    imageName: "work-1.webp",
-    longName: " Special Service for designers",
+    shortName: "First ShortName",
+    imageName: "coming.jpg",
+    longName: "Very very long name",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias. ",
     date: "4dec 2020",
-    technologies: "HTML and SCSS",
     role: "frontend",
     link: "https://www.youtube.com/",
+    technologies:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio!",
   },
   {
     id: 2,
-    shortName: "App Design",
-    imageName: "work-2.webp",
-    longName: " Mobile Landing App Design",
+    shortName: "Second ShortName",
+    imageName: "coming.jpg",
+    longName: "Very very long name",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias. ",
     date: "4dec 2020",
-    technologies: "HTML and SCSS",
     role: "frontend",
     link: "https://www.youtube.com/",
+    technologies:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio!",
   },
   {
     id: 3,
-    shortName: "Brand Design",
-    imageName: "work-3.webp",
-    longName: " Logo design for web and mobile app",
+    shortName: "Third ShortName",
+    imageName: "coming.jpg",
+    longName: "Very very long name",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias. ",
     date: "4dec 2020",
-    technologies: "HTML and SCSS",
     role: "frontend",
     link: "https://www.youtube.com/",
-  },
-  {
-    id: 4,
-    shortName: "App Design",
-    imageName: "work-4.webp",
-    longName: " Mobile Landing App Design",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias.",
-    date: "4dec 2020",
-    technologies: "HTML and SCSS",
-    role: "frontend",
-    link: "www.link.com",
-  },
-  {
-    id: 5,
-    shortName: "App Design",
-    imageName: "work-5.webp",
-    longName: " Mobile Landing App Design",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias.",
-    date: "4dec 2020",
-    technologies: "HTML and SCSS",
-    role: "frontend",
-    link: "www.link.com",
-  },
-  {
-    id: 6,
-    shortName: "App Design",
-    imageName: "work-6.webp",
-    longName: " Mobile Landing App Design",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio! Cum ullam quos veritatis porro placeat corporis quaeratpossimus molestias.",
-    date: "4dec 2020",
-    technologies: "HTML and SCSS",
-    role: "frontend",
-    link: "www.link.com",
+    technologies:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,optio!",
   },
 ];

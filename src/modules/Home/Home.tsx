@@ -13,7 +13,7 @@ import { contactData, sections } from "shared/libs";
 import Button from "shared/ui/Button";
 import SocialMedia from "components/SocialMedia";
 
-const Home: React.FC = () => {
+const Home: React.FC = React.memo(() => {
   const onCopy = (data: string) => {
     navigator.clipboard.writeText(data);
     toast("Copied!");
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className={styles.social}>
-          <span>Follow Me</span>
+          <span>My Social</span>
           <SocialMedia rotate={true} />
         </div>
 
@@ -45,11 +45,7 @@ const Home: React.FC = () => {
         <div className={styles.data}>
           <h1>Hi, I'm Andrey!</h1>
           <h3>Frontend Developer</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            eius magni earum sint nisi accusamus? Ea tempore corrupti tempora
-            debitis. Qui, ipsa?
-          </p>
+          <p>Junior developer experienced with React and Typescript</p>
 
           <Button bg="box" type="navigate" target={sections.about.id}>
             More About Me
@@ -90,6 +86,6 @@ const Home: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Home;

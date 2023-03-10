@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 import SocialMedia from "components/SocialMedia";
 import { sections } from "shared/libs";
 
-const Footer: React.FC = () => {
+const Footer: React.FC = React.memo(() => {
   return (
     <footer className={styles.footer}>
       <div>
@@ -34,6 +34,6 @@ const Footer: React.FC = () => {
       <p>&#169; Copyright. All rights reserved</p>
     </footer>
   );
-};
+});
 
 export default Footer;

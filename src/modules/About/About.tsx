@@ -6,7 +6,7 @@ import aboutImg from "shared/assets/imgs/photos/about-img.jpg";
 import Button from "shared/ui/Button";
 import { sections } from "shared/libs";
 
-const About: React.FC = () => {
+const About: React.FC = React.memo(() => {
   return (
     <section className={styles.about} id={sections.about.id}>
       <h2 data-heading="My Intro">About Me</h2>
@@ -14,15 +14,20 @@ const About: React.FC = () => {
         <img src={aboutImg} alt="About-Image" className={styles.aboutImage} />
 
         <div className={styles.data}>
-          <h3>Hi, I`m Andrey</h3>
+          <h3>Summary</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            placeat itaque vel dignissimos suscipit consequatur amet numquam
-            quisquam hic, ut sunt accusantium minus in delectus facere, aliquam
-            explicabo, assumenda quia.
+            I have experience in HTML/CSS, JavaScript/TypeScript and React.js.
+            I'm doing my best in building performant and accessible UI that will
+            be easy to maintain in the future and will meet development
+            standards.
+          </p>
+          <p>
+            I'm excited to learn new technologies and would like to be part of a
+            friendly and professional team where I can bring maximum profit to
+            the business.
           </p>
 
-          <div className={styles.info}>
+          {/* <div className={styles.info}>
             <div>
               <UilAward className={styles.icon} />
               <h4>Experience</h4>
@@ -40,7 +45,7 @@ const About: React.FC = () => {
               <h4>Support</h4>
               <span>Online 24/7</span>
             </div>
-          </div>
+          </div> */}
           <Button bg="body" type="navigate" target={sections.contact.id}>
             Contact Me
           </Button>
@@ -48,6 +53,6 @@ const About: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default About;

@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./SocialMedia.module.scss";
 
-import {
-  UilFacebook,
-  UilInstagramAlt,
-  UilLinkedin,
-} from "@iconscout/react-unicons";
+import { UilFacebook, UilGithub, UilLinkedin } from "@iconscout/react-unicons";
 
 import { contactData } from "shared/libs";
 
@@ -20,12 +16,12 @@ const SocialMedia: React.FC<SocialMediaType> = ({ rotate }) => {
         <UilFacebook />
       </a>
 
-      <a target="_blank" href={contactData.instagram}>
-        <UilInstagramAlt />
-      </a>
-
       <a target="_blank" href={contactData.linkedIn}>
         <UilLinkedin />
+      </a>
+
+      <a target="_blank" href={contactData.gitHub}>
+        <UilGithub />
       </a>
     </div>
   );

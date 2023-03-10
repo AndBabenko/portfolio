@@ -19,8 +19,8 @@
 .qualSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   row-gap: 2rem;
 
   h3 {
@@ -35,16 +35,18 @@
 .qualItem {
   position: relative;
   padding-left: 3rem;
+  row-gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
 
   h4 {
     font-size: $normal-font-size;
-    margin-bottom: 0.5rem;
     font-weight: $font-medium;
   }
 
   p {
     font-size: $small-font-size;
-    margin-bottom: 0.5rem;
+    height: 45px;
   }
 
   span {

@@ -2,6 +2,7 @@
 
 .skills {
   @include section;
+  min-height: 585px;
 
   &Container {
     display: grid;
@@ -58,7 +59,9 @@
 }
 
 .skillsSection {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   row-gap: 1.8rem;
 }
 

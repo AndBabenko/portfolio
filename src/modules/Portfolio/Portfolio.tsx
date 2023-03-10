@@ -40,7 +40,7 @@ const ProjectCard: React.FC<projectType> = (props) => {
   );
 };
 
-const Portfolio: React.FC = () => {
+const Portfolio: React.FC = React.memo(() => {
   const projectsList = projects.map((proj) => (
     <ProjectCard key={proj.id} {...proj} />
   ));
@@ -52,6 +52,6 @@ const Portfolio: React.FC = () => {
       <div className={styles.portfolioContainer}>{projectsList}</div>
     </section>
   );
-};
+});
 
 export default Portfolio;

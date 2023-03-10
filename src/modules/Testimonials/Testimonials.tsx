@@ -29,7 +29,7 @@ const TestimonialCard: React.FC<TestimonialType> = (props) => {
   );
 };
 
-const Testimonials: React.FC = () => {
+const Testimonials: React.FC = React.memo(() => {
   const cardsList = testimonialsList.map((item) => (
     <SwiperSlide key={item.id}>
       <TestimonialCard {...item} />
@@ -37,7 +37,8 @@ const Testimonials: React.FC = () => {
   ));
 
   return (
-    <section className={styles.testim} id={sections.testimonials.id}>
+    <section className={styles.testim}>
+      {/* <section className={styles.testim} id={sections.testimonials.id}> */}
       <h2 data-heading="My Clients Says">Testimonials</h2>
 
       <Swiper
@@ -62,6 +63,6 @@ const Testimonials: React.FC = () => {
       </Swiper>
     </section>
   );
-};
+});
 
 export default Testimonials;

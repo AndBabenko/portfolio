@@ -7,9 +7,9 @@ export const sections = {
     id: "about",
     text: "About",
   },
-  qualification: {
-    id: "qualification",
-    text: "Qualification",
+  history: {
+    id: "history",
+    text: "History",
   },
   skills: {
     id: "skills",
@@ -19,10 +19,10 @@ export const sections = {
     id: "portfolio",
     text: "Portfolio",
   },
-  testimonials: {
-    id: "testimonials",
-    text: "Testimonials",
-  },
+  // testimonials: {
+  //   id: "testimonials",
+  //   text: "Testimonials",
+  // },
   contact: {
     id: "contact",
     text: "Contact",

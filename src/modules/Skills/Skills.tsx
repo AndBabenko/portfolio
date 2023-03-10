@@ -11,7 +11,7 @@ import {
 import {
   frontendSkills,
   backendSkills,
-  designSkills,
+  otherSkills,
   sections,
 } from "shared/libs";
 
@@ -34,7 +34,7 @@ const SkillLine: React.FC<SkillItemType> = ({ skill, level }) => {
   );
 };
 
-const Skills: React.FC = () => {
+const Skills: React.FC = React.memo(() => {
   const [currentSkill, setCurrentSkill] = useState(frontendSkills);
 
   const PercentsGroup = currentSkill.map((item: SkillItemType) => (
@@ -55,8 +55,8 @@ const Skills: React.FC = () => {
           >
             <UilBracketsCurly className={styles.icon} />
             <div>
-              <h3>Frontend Developer</h3>
-              <p>Some months</p>
+              <h3>Frontend Technologies</h3>
+              <p>Can be helpful!</p>
             </div>
             <UilAngleDown className={styles.arrow} />
           </div>
@@ -69,21 +69,21 @@ const Skills: React.FC = () => {
           >
             <UilServers className={styles.icon} />
             <div>
-              <h3>Backend Developer</h3>
-              <p>Less then one month </p>
+              <h3>Backend Technologies</h3>
+              <p>Also interestring!</p>
             </div>
             <UilAngleDown className={styles.arrow} />
           </div>
 
           <div
             className={`${styles.header} ${
-              currentSkill === designSkills ? styles.active : ""
+              currentSkill === otherSkills ? styles.active : ""
             }`}
-            onClick={() => setCurrentSkill(designSkills)}
+            onClick={() => setCurrentSkill(otherSkills)}
           >
             <UilSwatchbook className={styles.icon} />
             <div>
-              <h3>UI/UX design</h3>
+              <h3>Other</h3>
               <p>A few days</p>
             </div>
             <UilAngleDown className={styles.arrow} />
@@ -94,6 +94,6 @@ const Skills: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Skills;

@@ -1,48 +1,68 @@
 export const frontendSkills = [
   {
-    skill: "HTML",
+    skill: "HTML, CSS",
     level: 90,
   },
   {
-    skill: "CSS",
-    level: 80,
+    skill: "JS, TS",
+    level: 70,
   },
   {
-    skill: "JS",
-    level: 85,
+    skill: "React, Redux (+Toolkit)",
+    level: 70,
   },
   {
-    skill: "React",
-    level: 78,
+    skill: "Webpack",
+    level: 60,
+  },
+  {
+    skill: "React Native",
+    level: 5,
+  },
+  {
+    skill: "Tree JS, Blender",
+    level: 1,
   },
 ];
 
 export const backendSkills = [
   {
-    skill: "PHP",
-    level: 90,
+    skill: "Node.js, Express",
+    level: 35,
   },
   {
-    skill: "Python",
-    level: 20,
+    skill: "SQL",
+    level: 5,
   },
   {
-    skill: "MySQL",
-    level: 20,
+    skill: "Data Structures",
+    level: 1,
+  },
+  {
+    skill: "Algorithms",
+    level: 1,
   },
 ];
 
-export const designSkills = [
+export const otherSkills = [
+  {
+    skill: "Git",
+    level: 60,
+  },
   {
     skill: "Figma",
-    level: 90,
+    level: 50,
   },
   {
-    skill: "Scatch",
-    level: 80,
+    skill: "Jest",
+    level: 30,
   },
   {
-    skill: "Photoshop",
-    level: 85,
+    skill: "Architecture",
+    level: 10,
+  },
+  {
+    skill: "English",
+    level: 60,
   },
 ];

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Sidebar.module.scss";
 
 import { HashLink } from "react-router-hash-link";
@@ -7,11 +7,15 @@ import { UilShareAlt, UilTimes, UilBars } from "@iconscout/react-unicons";
 import { sections } from "shared/libs";
 
 //TODO Перенести инициализацию на уровень страницы
-const currentSection = "Home";
+// const currentSection = "Home";
 
-const Sidebar: React.FC = () => {
+interface ISidebarProps {
+  currentSection: string;
+  setSection: (arg0: string) => void;
+}
+
+const Sidebar: React.FC<ISidebarProps> = ({ currentSection, setSection }) => {
   const [menuVisible, setMenuVisible] = useState(false);
-  const elem = useRef();
 
   let serializedSections = Object.entries(sections);
 
@@ -19,12 +23,10 @@ const Sidebar: React.FC = () => {
     const section = item[1];
     return (
       <li
-        onClick={() => {
-          console.log("Click on", section.text);
-        }}
+        onClick={() => setSection(section.id)}
         key={section.id}
         className={`${styles.menuItem} ${
-          currentSection === section.id ? "active" : ""
+          currentSection == section.id ? styles.active : ""
         }`}
       >
         <HashLink smooth to={`/#${section.id}`}>
