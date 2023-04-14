@@ -2,10 +2,10 @@
 
 // Base color = 242;
 
-$theme-color: hsl(342, 92%, 46%);
+$theme-color: rgb(225, 9, 74);
 $title-color: hsl(242, 8%, 95%);
 $text-color: hsl(242, 8%, 85%);
-$body-color: rgb(10, 10, 15);
+$body-color: #0a0a0f;
 $box-color: #16161d;
 $scroll-bar-color: hsl(242, 12%, 38%);
 $scroll-thumb-color: hsl(242, 12%, 26%);
@@ -67,7 +67,7 @@ $z-portfolioPopup: 40;
 }
 
 @mixin section() {
-  padding: 5rem 0 2rem;
+  padding-top: 5rem;
   margin-left: 100px;
 
   h2 {
@@ -75,21 +75,21 @@ $z-portfolioPopup: 40;
     font-size: $h2-font-size;
     margin-bottom: 3rem;
 
-    &::before {
-      content: attr(data-heading);
-      display: block;
-      font-size: $normal-font-size;
-      font-weight: $font-medium;
-      color: $theme-color;
-    }
+    // &::before {
+    //   content: attr(data-heading);
+    //   display: block;
+    //   font-size: $normal-font-size;
+    //   font-weight: $font-medium;
+    //   color: $theme-color;
+    // }
   }
 
   @media screen and (max-width: 768px) {
-    padding: 3rem 0 1.5rem;
+    padding-top: 3rem;
     margin-left: 0;
   }
 
   @media screen and (max-width: 350px) {
-    padding: 2.5rem 0 1rem;
+    padding-top: 2.5rem;
   }
 }

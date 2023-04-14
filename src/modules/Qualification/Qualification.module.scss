@@ -46,7 +46,8 @@
 
   p {
     font-size: $small-font-size;
-    height: 45px;
+    height: 65px;
+    overflow-y: auto;
   }
 
   span {

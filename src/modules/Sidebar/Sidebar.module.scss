@@ -18,6 +18,46 @@
   }
 }
 
+@mixin transformSidebar() {
+  .sidebar {
+    width: 100%;
+    
+    transform: translateX(-100%);
+  }
+
+  .menu {
+    height: 100%;
+    width: 100%;
+    transform: translateX(0);
+    justify-content: center;
+
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .menuItem {
+    padding: 1rem 0;
+    height: inherit;
+  }
+
+  .logo,
+  .btnShare {
+    display: none;
+  }
+
+  .btnOpen,
+  .btnClose {
+    display: flex;
+  }
+
+  .btnToggle {
+    display: flex;
+  }
+}
+
 .sidebar {
   position: fixed;
   width: 100px;
@@ -45,15 +85,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: $theme-color;
   text-align: center;
-
-  span {
-    font-size: 1.125rem;
-    color: $title-color;
-    font-weight: $font-bold;
-    line-height: 40px;
-  }
 }
 
 .menu {
@@ -136,44 +168,11 @@
 }
 
 @media screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    transform: translateX(-100%);
-    // z-index: 99;
-    // margin-right: 0;
-  }
+  @include transformSidebar;
+}
 
-  .menu {
-    height: 100%;
-    width: 100%;
-    transform: translateX(0);
-    justify-content: center;
-
-    ul {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  .menuItem {
-    padding: 1rem 0;
-    height: inherit;
-  }
-
-  .logo,
-  .btnShare {
-    display: none;
-  }
-
-  .btnOpen,
-  .btnClose {
-    display: flex;
-  }
-
-  .btnToggle {
-    display: flex;
-  }
+@media screen and (max-height: 630px) {
+  @include transformSidebar;
 }
 
 @media screen and (max-width: 576px) {

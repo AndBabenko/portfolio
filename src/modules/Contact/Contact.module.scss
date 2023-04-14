@@ -80,6 +80,7 @@
 
 .formItem {
   position: relative;
+  max-height: 140px;
 
   > span {
     // Text on the top border
@@ -131,6 +132,7 @@
 
   > textarea {
     min-height: 140px;
+    height: 100%;
     resize: none;
   }
 
@@ -174,6 +176,20 @@
   .contactContainer {
     grid-template-columns: 400px;
     row-gap: 3rem;
+  }
+
+  .card {
+    > span {
+      .arrowIcon {
+        transform: rotate(90deg);
+      }
+
+      &:hover {
+        .arrowIcon {
+          transform: rotate(90deg) translateX(3px);
+        }
+      }
+    }
   }
 }
 

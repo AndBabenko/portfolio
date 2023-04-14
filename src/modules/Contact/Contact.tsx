@@ -5,7 +5,7 @@ import {
   UilTelegram,
   UilArrowRight,
 } from "@iconscout/react-unicons";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./Contact.module.scss";

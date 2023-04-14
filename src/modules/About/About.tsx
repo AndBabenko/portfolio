@@ -16,10 +16,9 @@ const About: React.FC = React.memo(() => {
         <div className={styles.data}>
           <h3>Summary</h3>
           <p>
-            I have experience in HTML/CSS, JavaScript/TypeScript and React.js.
-            I'm doing my best in building performant and accessible UI that will
-            be easy to maintain in the future and will meet development
-            standards.
+            I have experience in HTML and CSS, JS/TS and React.js. I'm doing my
+            best in building performant and accessible UI that will be easy to
+            maintain in the future and will meet development standards.
           </p>
           <p>
             I'm excited to learn new technologies and would like to be part of a

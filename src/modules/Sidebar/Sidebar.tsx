@@ -5,9 +5,7 @@ import { HashLink } from "react-router-hash-link";
 import { UilShareAlt, UilTimes, UilBars } from "@iconscout/react-unicons";
 
 import { sections } from "shared/libs";
-
-//TODO Перенести инициализацию на уровень страницы
-// const currentSection = "Home";
+import logo from "shared/assets/imgs/logo.png";
 
 interface ISidebarProps {
   currentSection: string;
@@ -19,11 +17,16 @@ const Sidebar: React.FC<ISidebarProps> = ({ currentSection, setSection }) => {
 
   let serializedSections = Object.entries(sections);
 
+  const onSectionClickHandler = (id: string) => {
+    setSection(id);
+    setMenuVisible(false);
+  };
+
   const sectionsList = serializedSections.map((item) => {
     const section = item[1];
     return (
       <li
-        onClick={() => setSection(section.id)}
+        onClick={() => onSectionClickHandler(section.id)}
         key={section.id}
         className={`${styles.menuItem} ${
           currentSection == section.id ? styles.active : ""
@@ -53,7 +56,7 @@ const Sidebar: React.FC<ISidebarProps> = ({ currentSection, setSection }) => {
       <aside className={`${styles.sidebar} ${menuVisible ? styles.shown : ""}`}>
         <nav className={styles.nav}>
           <div className={styles.logo}>
-            <span>A</span>
+            <img src={logo} alt="Logo" />
           </div>
           <div className={styles.menu}>
             <ul>{sectionsList}</ul>

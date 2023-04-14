@@ -3,20 +3,20 @@
 .footer {
   margin-left: 100px;
   background-color: $box-color;
-  padding: 3rem 0 1.5rem 0;
+  padding: 2.5rem 0 1rem 0;
 
   > div {
     @include container;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.6rem;
-    align-items: start;
+    gap: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   > p {
     font-size: $smallest-font-size;
     text-align: center;
-    margin-top: 4.5rem;
+    margin-top: 2.5rem;
   }
 }
 
@@ -49,16 +49,12 @@
 }
 
 .social {
-  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 1024px) {
-  .footer {
-    > p {
-      margin-top: 4rem;
-    }
-  }
-
   .content {
     > h2 {
       font-size: $h3-font-size;
@@ -72,28 +68,27 @@
   }
 }
 
+@media screen and (max-height: 630px) {
+  .footer {
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .footer {
-    padding: 2rem 0 2rem;
+    padding: 1.5rem 0 1rem;
     margin-left: 0;
 
-    > div {
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 3rem;
-    }
-
     > p {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
     }
   }
 
+  .content {
+    display: none;
+  }
   .social {
     justify-self: start;
-  }
-
-  .links {
-    flex-direction: column;
-    row-gap: 1.5rem;
   }
 }
 
@@ -103,8 +98,7 @@
     margin-left: 0;
 
     > div {
-      grid-template-columns: 1fr;
-      row-gap: 2rem;
+      flex-direction: column;
     }
   }
 
