@@ -1,5 +1,4 @@
 import React from "react";
-import { UilAward, UilSuitcase, UilHeadphones } from "@iconscout/react-unicons";
 import styles from "./About.module.scss";
 
 import aboutImg from "shared/assets/imgs/photos/about-img.jpg";

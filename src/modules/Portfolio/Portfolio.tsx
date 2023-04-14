@@ -23,12 +23,14 @@ const ProjectCard: React.FC<projectType> = (props) => {
 
   return (
     <div className={styles.card}>
-      <img src={image} alt={shortName} />
-      <h3>{shortName}</h3>
+      <div className={styles.cardImage}>
+        <img src={image} alt={shortName} />
+      </div>
       <span onClick={handlePopupOpen}>
         Details
         <UilArrowRight className={styles.icon} />
       </span>
+      <h3>{shortName}</h3>
 
       {isPopupVisible && (
         <PortfolioPopup

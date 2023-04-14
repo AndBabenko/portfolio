@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Sidebar.module.scss";
 
 import { HashLink } from "react-router-hash-link";
-import { UilShareAlt, UilTimes, UilBars } from "@iconscout/react-unicons";
+import { UilTimes, UilBars } from "@iconscout/react-unicons";
 
 import { sections } from "shared/libs";
 import logo from "shared/assets/imgs/logo.png";
@@ -54,14 +54,14 @@ const Sidebar: React.FC<ISidebarProps> = ({ currentSection, setSection }) => {
     <>
       <ToggleMenuButton />
       <aside className={`${styles.sidebar} ${menuVisible ? styles.shown : ""}`}>
-        <nav className={styles.nav}>
+        <nav className={styles.sidebarNavigation}>
           <div className={styles.logo}>
             <img src={logo} alt="Logo" />
           </div>
           <div className={styles.menu}>
             <ul>{sectionsList}</ul>
           </div>
-          <UilShareAlt className={styles.btnShare} />
+          <div></div>
         </nav>
       </aside>
     </>

@@ -21,7 +21,7 @@
 @mixin transformSidebar() {
   .sidebar {
     width: 100%;
-    
+
     transform: translateX(-100%);
   }
 
@@ -68,8 +68,9 @@
   z-index: $z-sidebar;
   background-color: $body-color;
 
-  nav {
+  .sidebarNavigation {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

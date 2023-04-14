@@ -8,10 +8,17 @@ type ButtonProps = {
   children: string;
   type: "navigate" | "submit";
   bg: "body" | "box";
+  onClick?: (evt: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   target?: string;
 };
 
-const Button: React.FC<ButtonProps> = ({ children, type, bg, target }) => {
+const Button: React.FC<ButtonProps> = ({
+  children,
+  type,
+  bg,
+  onClick,
+  target,
+}) => {
   const NavigateButton: React.FC = () => (
     <button className={styles.button}>
       <HashLink
@@ -30,7 +37,7 @@ const Button: React.FC<ButtonProps> = ({ children, type, bg, target }) => {
   );
 
   const SubmitButton: React.FC = () => (
-    <button className={styles.button} type="submit">
+    <button className={styles.button} type="submit" onClick={onClick}>
       <div
         className={`${styles.container} ${
           bg === "body" ? styles.bodyBtn : styles.boxBtn

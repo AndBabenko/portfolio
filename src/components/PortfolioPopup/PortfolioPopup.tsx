@@ -14,8 +14,16 @@ const PortfolioPopup: React.FC<PopupPropsType> = ({
   onClosePopup,
 }) => {
   const popupRef = useRef(null);
-  const { imageName, longName, description, date, technologies, role, link } =
-    popupData;
+  const {
+    imageName,
+    longName,
+    description,
+    date,
+    technologies,
+    role,
+    link,
+    github,
+  } = popupData;
 
   const image = require(`../../shared/assets/imgs/portfolio/${imageName}`);
 
@@ -51,7 +59,7 @@ const PortfolioPopup: React.FC<PopupPropsType> = ({
             <p>{description}</p>
             <ul className={styles.details}>
               <li>
-                Created: <span>{date}</span>
+                Finished: <span>{date}</span>
               </li>
               <li>
                 Technologies: <span>{technologies}</span>
@@ -60,10 +68,18 @@ const PortfolioPopup: React.FC<PopupPropsType> = ({
                 Role: <span>{role}</span>
               </li>
               <li>
+                Github:
+                <span>
+                  <a target="_blank" href={github}>
+                    Click here for details
+                  </a>
+                </span>
+              </li>
+              <li>
                 View:
                 <span>
                   <a target="_blank" href={link}>
-                    {link}
+                    Click me!
                   </a>
                 </span>
               </li>
